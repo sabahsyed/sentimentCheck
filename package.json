@@ -1,5 +1,5 @@
 {
-  "name": "1-Passport-Example",
+  "name": "project2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "test": "npm run lint",
     "start": "node server.js",
     "lint": "eslint --quiet .",
-    "fix": "eslint --fix .",
+    "fix": "eslint **/*.js --quiet --fix",
     "watch": "nodemon server.js"
   },
   "keywords": [],
@@ -31,5 +31,13 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabahsyed/Project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sabahsyed/Project2/issues"
+  },
+  "homepage": "https://github.com/sabahsyed/Project2#readme"
 }
