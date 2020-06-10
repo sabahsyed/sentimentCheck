@@ -1,0 +1,1 @@
+create database message_board;
