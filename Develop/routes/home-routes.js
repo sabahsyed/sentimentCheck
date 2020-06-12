@@ -1,11 +1,13 @@
 const db = require("../models");
-
 module.exports = function(app) {
-  app.get("/", (req, res) => {
-    res.send("Hello World!");
+  app.get("api/messages", (req, res) => {
+    res.json({
+      message: req.message
+    });
   });
-  app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
-  });
+  app.post("api/messages", (req,res) => {
+      db.Message.create({
+        message: 
+      })
+  })
 };
