@@ -7,7 +7,22 @@ module.exports = function(app) {
   });
   app.post("api/messages", (req,res) => {
       db.Message.create({
-        message: 
+        message: req.body.userMessage
       })
+      .then(() => {
+        res.redirect(307, "/api/messages");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
   })
+
+  app.get("/api/messages",(req,res) =>{
+
+  })
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
+
 };
