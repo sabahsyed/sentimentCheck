@@ -3,14 +3,14 @@ const db = require("../models");
 module.exports = function(app) {
   app.post("/api/index", (req, res) => {
     res.json({
-      messages: req.message.messages,
       username: req.message.username,
+      messages: req.message.messages,
       id: req.user.id
     });
   });
 
   app.post("/api/index", (req, res) => {
-    db.User.create({
+    db.Message.create({
       email: req.body.email,
       password: req.body.password
     })
@@ -22,15 +22,15 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/api/user_data", (req, res) => {
-    if (!req.message) {
-      res.json({});
-    } else {
-      res.json({
-        messages: req.message.messages,
-        username: req.message.username,
-        id: req.user.id
-      });
-    }
-  });
+  // app.get("/api/user_data", (req, res) => {
+  //   if (!req.message) {
+  //     res.json({});
+  //   } else {
+  //     res.json({
+  //       username: req.message.username,
+  //       messages: req.message.messages,
+  //       id: req.user.id
+  //     });
+  //   }
+  // });
 };
