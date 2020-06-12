@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "message_board",
+    "username": "<your server username here",
+    "password": "<your server password here>",
+    "database": "<your database name here>",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
