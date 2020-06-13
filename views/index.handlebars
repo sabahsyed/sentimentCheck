@@ -1,11 +1,11 @@
 <ul>
   {{#each messages}}
     <li>
-      <p>Name: {{username}}</p>
-      <p>Message: {{message}}</p>
-      <p>Sentiment: {{sentiment}}</p>
-      <p>Likes: {{likes}}</p>
-      <p>Dislikes: {{dislikes}}</p>
+      <p>Name: {{this.username}}</p>
+      <p>Message: {{this.message}}</p>
+      <p>Sentiment: {{this.sentiment}}</p>
+      <p>Likes: {{this.likes}}</p>
+      <p>Dislikes: {{this.dislikes}}</p>
     </li>
   {{/each}}
 </ul>

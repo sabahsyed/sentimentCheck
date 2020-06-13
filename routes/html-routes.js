@@ -3,7 +3,14 @@ module.exports = function(app) {
     const hbsObject = {
       messages: req
     };
-    console.log(hbsObject);
+    console.log(
+      "Request --------------------------------------------------------------- Request"
+    );
+    console.log(req.body);
+    console.log(
+      "Response --------------------------------------------------------------- Response"
+    );
+    console.log(res.body);
     console.log("main page");
     res.render("index", hbsObject);
   });
