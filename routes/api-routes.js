@@ -48,19 +48,17 @@ const db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/messages", (req, res) => {
-    res.json({
-      message: req.message
-    });
+    res.json("index", { posts: req.message });
   });
   app.post("/api/messages", (req, res) => {
     console.log("Inside api-routes /api/messages");
     console.log(req.body);
-    db.Message.create({
-      username: req.body.name,
+    db.Message.create("index", {
+      username: req.body.username,
       message: req.body.message
     })
       .then(() => {
-        res.render("index", result); // USE HANDLEBARS HERE
+        res.render("index", { posts: res }); // USE HANDLEBARS HERE
       })
       .catch(err => {
         res.status(401).json(err);
@@ -70,6 +68,6 @@ module.exports = function(app) {
   app.get("/api/listMessages", (req, res) => {
     console.log();
     result = db.Message.findAll();
-    res.render("index", result); //USE HANDLEBARS HERE
+    res.render("index", { posts: res }); //USE HANDLEBARS HERE
   });
 };
