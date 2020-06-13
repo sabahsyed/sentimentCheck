@@ -1,47 +1,26 @@
 {
-  "name": "project2",
+  "name": "projecttest",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "node server.js",
   "scripts": {
-    "test": "npm run lint",
-    "start": "node server.js",
-    "lint": "eslint --quiet .",
-    "fix": "eslint **/*.js --quiet --fix",
-    "watch": "nodemon server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "2.4.3",
-    "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
-    "express-session": "^1.17.1",
-    "handlebars": "^4.7.6",
-    "mysql2": "^1.7.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "safe-buffer": "^5.2.1",
-    "sequelize": "^5.21.12"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "chai": "^4.1.2",
-    "chai-http": "^4.0.0",
-    "cross-env": "^5.2.0",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
-    "mocha": "^5.2.0",
-    "prettier": "^1.13.7"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sabahsyed/Project2.git"
+    "url": "git+https://github.com/sabahsyed/projectTest.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sabahsyed/Project2/issues"
+    "url": "https://github.com/sabahsyed/projectTest/issues"
   },
-  "homepage": "https://github.com/sabahsyed/Project2#readme"
+  "homepage": "https://github.com/sabahsyed/projectTest#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.12"
+  }
 }
