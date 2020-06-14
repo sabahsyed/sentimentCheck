@@ -1,18 +1,22 @@
 const db = require("../models");
 module.exports = function(app) {
-  app.get("/api/messages", (req, res) => {
-    res.json({
-      message: req.message
-    });
+
+  app.get('/', function (req, res) {
+    console.log("/get");
   });
+  app.get("/api/messages", (req, res) => {
+    console.log("/get/api/messages")
+    res.render("index", hbs);
+  });
+
   app.post("/api/messages", (req,res) => {
     console.log("Inside api-routes /api/messages");
     console.log(req.body);
-      db.Message.create({
+      var hbs = db.Message.create({
         username : req.body.name,
         message: req.body.message
       }).then(() => {
-        res.json(); // USE HANDLEBARS HERE
+        res.render("index", hbs); // USE HANDLEBARS HERE
       })
       .catch(err => {
         res.status(401).json(err);
@@ -20,8 +24,8 @@ module.exports = function(app) {
   });
 
   app.get("/api/listMessages",(req,res) =>{
-    console.log()
+    console.log();
     var result = db.Message.findAll()
-    return res.json(result); //USE HANDLEBARS HERE
+    res.render("index", {Message : result}) //USE HANDLEBARS HERE
   });
 };

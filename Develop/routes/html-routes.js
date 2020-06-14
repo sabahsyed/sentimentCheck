@@ -6,34 +6,22 @@ const path = require("path");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/message.html"));
+    res.render("index");
   });
 
 
   app.get("/messages", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/message.html"));
+    res.render("index");
   });
 
   app.post("/messages", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/message.html"));
+   // res.render("index", hbsObject);
   });
 
-  app.get("/listMessages", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/message.html"));
-  });
+  // app.get("/listMessages", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../public/message.html"));
+  // });
 }
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // app.get("/members", isAuthenticated, (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../public/members.html"));
-  // });
-
-  // app.post("/members",(req, res) => {
-  //   console.log(req.body);
-  //   // res.json({
-  //   //       message:"Heeelo"
-  //   //     });
-  //   res.sendFile(path.join(__dirname, "../public/practice.html"));
-  // });
+  
 
   
