@@ -9,10 +9,18 @@ const path = require("path");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    // db.Message.findAll().then((messages) =>{
-    //   res.render('index', {messages: messages})
-    // })
-    res.redirect("/messages");
+    console.log("STRING MSG GETTING DATA FROM DB");
+    db.Message.findAll().then(result => {
+      var hbsObject = {
+        messages: result
+      };
+      console.log(JSON.stringify(hbsObject,null,2));
+      //console.log(Object.prototype.toString.call(hbsObject));
+      res.render("index", hbsObject);
+      //console.log({messages : JSON.stringify(result)});
+    //res.render("index", {messages : result}) //USE HANDLEBARS HERE
+    })
+    
   });
 
 
@@ -20,18 +28,10 @@ module.exports = function(app) {
   //   res.render("index");
   // });
 
-  app.post("/messages", (req, res) => {
-    res.render("index");
-  });
+  // app.post("/messages", (req, res) => {
+  //   res.render("index");
+  // });
 
-  app.get("/messages", (req, res) => {
-    console.log("STRING MSG GETTING DATA FROM DB");
-    db.Message.findAll().then(result => {
-      console.log({messages : JSON.stringify(result)});
-    res.render("index", {messages : result}) //USE HANDLEBARS HERE
-    })
-    
-  });
 
   // burger.all(function(burgerData) {
   //   // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar

@@ -17,17 +17,14 @@
   <button type="click" id = "submitBtn">Add Message:</button>
 </form>
 <h1>Message up</h1>
-<ul>
+<ul class ="message-body">
   {{#each messages}}
-  
+  {{log this}}
   	<li>
-  		<p><span class="label">User name:</span> {{messages.username}}</p>
-  		<p><span class="label">message:</span> {{messages.message}}</p>
-      <p><span class="label">User name:</span> {{username}}</p>
-      <p><span class="label">Message:</span> {{message}}</p>
-      <button data-id="{{this.id}}" class="delquote">Delete</button>
-
-      <a href="/{{this.id}}">Update this quote</a>
+  		<p><span class="label">User name:</span> {{this.dataValues.username}}</p>
+  		<p><span class="label">message:</span> {{this.dataValues.message}}</p>
+      <button data-id="{{this.dataValues.id}}" class="delquote">Delete</button>
+      <a href="/{{this.dataValues.id}}">Update this quote</a>
   	</li>
   {{/each}}
 </ul>

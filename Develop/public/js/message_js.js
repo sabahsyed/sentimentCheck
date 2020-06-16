@@ -22,7 +22,6 @@ $(document).ready(() => {
       console.log("This is the user name :" + userMessage.name)
       console.log("This is the message entered  :" +  userMessage.message);
       postMessage(userMessage.name,userMessage.message);
-      displayMessage(userMessage.name,userMessage.message);
       //userMessage.val("");
     });
 
@@ -31,22 +30,19 @@ $(document).ready(() => {
         name :name,
         message: message
       })
-        .then(() => {
-          console.log(message);
-          window.location.replace("/messages");
-        })
-        .catch(handleLoginErr);
+        .then((response) => {
+          console.log(response);
+          displayMessage(response);
+        },handleLoginErr)
     }
     function handleLoginErr(err) {
       $("#alert .msg").text(err.responseJSON);
       $("#alert").fadeIn(500);
     }
 
-    function displayMessage(){
-      $.get("/messages", function(data){
-        console.log("Show msgs on handlebar");
-    });
-}
+    function displayMessage(message){
+      
+    }
   
 });
     

@@ -16,8 +16,9 @@ module.exports = function(app) {
         db.Message.create({
           username : req.body.name,
           message: req.body.message
-      }).then(() => {
-        res.render("index",{ username: username, message: message }); // USE HANDLEBARS HERE
+      }).then((result) => {
+        console.log(result);
+        res.json(result.dataValues);
       })
       .catch(err => {
         res.status(401).json(err);
