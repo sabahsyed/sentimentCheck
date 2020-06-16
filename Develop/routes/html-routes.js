@@ -31,12 +31,6 @@ module.exports = function(app) {
   // app.post("/messages", (req, res) => {
   //   res.render("index");
   // });
-
-
-  // burger.all(function(burgerData) {
-  //   // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar
-  //   res.render("index", { burger_data: burgerData });
-  // });
 }
   
 

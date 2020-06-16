@@ -17,8 +17,8 @@ module.exports = function(app) {
         db.Message.create({
           username : req.body.name,
           message: req.body.message,
-          sentiment : 0,  //TODO Andrew's code
-          magnitude :0 //TODO Andrew's code
+          //sentiment : 0,  //TODO Andrew's code
+          //magnitude :0 //TODO Andrew's code
       }).then((result) => {
         console.log(result);
         res.json(result.dataValues);
