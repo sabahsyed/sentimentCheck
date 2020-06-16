@@ -1,12 +1,11 @@
 $(document).ready(() => {
+  newTitle();
   //var template = document.getElementById('message-template').innerHTML;
   //var renderPost = Handlebars.compile(template);
   const messageInput = $("#userMessage");
   const userNameInput = $("#userName")
   console.log("HELLO inside message_js.js");
   const postBtn = $("#submitBtn");
-
-  //displayMessage();
 
   postBtn.on("click", event => {
     event.preventDefault();
@@ -53,8 +52,20 @@ $(document).ready(() => {
     row.append("</ul>");
     row.append("</div>")
     $(".message-body").prepend(row);
+}
+var target = document.getElementById('target');
+function newTitle () {
+  var titles = [
+    'Title 1',
+    'Title 2',
+    'Title 3',
+    'Title 4',
+    'Title 5'
+];
 
-  }
+    var i = (Math.random() * titles.length) | 0;
+    document.getElementById("target").innerHTML = "FUN FACT : " + titles[i];
+}
 
 });
 
