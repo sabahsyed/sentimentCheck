@@ -9,23 +9,34 @@ const path = require("path");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    db.Message.findAll().then((messages) =>{
-      res.render('index', {messages: messages})
-    })
+    // db.Message.findAll().then((messages) =>{
+    //   res.render('index', {messages: messages})
+    // })
+    res.redirect("/messages");
   });
 
 
-  app.get("/messages", (req, res) => {
-    res.render("index");
-  });
+  // app.get("/messages", (req, res) => {
+  //   res.render("index");
+  // });
 
   app.post("/messages", (req, res) => {
     res.render("index");
   });
 
-  app.get("/listMessages", (req, res) => {
-    //res.sendFile(path.join(__dirname, "../public/message.html"));
+  app.get("/messages", (req, res) => {
+    console.log("STRING MSG GETTING DATA FROM DB");
+    db.Message.findAll().then(result => {
+      console.log({messages : JSON.stringify(result)});
+    res.render("index", {messages : result}) //USE HANDLEBARS HERE
+    })
+    
   });
+
+  // burger.all(function(burgerData) {
+  //   // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar
+  //   res.render("index", { burger_data: burgerData });
+  // });
 }
   
 

@@ -5,6 +5,10 @@ $(document).ready(() => {
     console.log("HELLO inside message_js.js");
     const postBtn = $("#submitBtn");
     console.log(postBtn);
+
+    //Display MSgs by default 
+    displayMessage();
+
     postBtn.on("click", event => {
       event.preventDefault();
       console.log("Inside Post Button");
@@ -21,6 +25,7 @@ $(document).ready(() => {
       displayMessage(userMessage.name,userMessage.message);
       //userMessage.val("");
     });
+
     function postMessage(name,message){
       $.post("/api/messages", {
         name :name,
@@ -38,22 +43,12 @@ $(document).ready(() => {
     }
 
     function displayMessage(){
-      $.get("/api/listMessages"), function(data){
-        if (data.length !== 0) {
-          var msg = '';
-          var name = '';
-          for (var i = 0; i < data.length; i++) {
-            name += data[i].username + '\n';
-            msg += data[i].message + '\n';
-          }
-          $(".messages").text(msg);
-        }
-    
-  }
+      $.get("/messages", function(data){
+        console.log("Show msgs on handlebar");
+    });
 }
-});
   
-
+});
     
   
   

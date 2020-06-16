@@ -24,7 +24,7 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/api/listMessages",(req,res) =>{
+  app.get("/api/messages",(req,res) =>{
     console.log();
     var result = db.Message.findAll()
     res.render("index", {Message : result}) //USE HANDLEBARS HERE
