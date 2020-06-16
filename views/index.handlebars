@@ -16,6 +16,15 @@
 
   <button type="click" id = "submitBtn">Add Message:</button>
 </form>
+{{!-- 
+<template id="message-template">
+  <div class="messageTemp">
+    <h1>Name :{{name}}</h1>
+    <p>Message : {{message}}</p>
+  </div>
+</template> --}}
+
+
 <h1>Message up</h1>
 <ul class ="message-body">
   {{#each messages}}
@@ -23,8 +32,8 @@
   	<li>
   		<p><span class="label">User name:</span> {{this.dataValues.username}}</p>
   		<p><span class="label">message:</span> {{this.dataValues.message}}</p>
-      <button data-id="{{this.dataValues.id}}" class="delquote">Delete</button>
-      <a href="/{{this.dataValues.id}}">Update this quote</a>
+      {{!-- <button data-id="{{this.dataValues.id}}" class="delquote">Delete</button> --}}
+      {{!-- <a href="/{{this.dataValues.id}}">Update this quote</a> --}}
   	</li>
   {{/each}}
 </ul>

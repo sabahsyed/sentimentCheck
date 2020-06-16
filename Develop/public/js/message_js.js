@@ -1,11 +1,12 @@
 $(document).ready(() => {
-
+  //var template = document.getElementById('message-template').innerHTML;
+  //var renderPost = Handlebars.compile(template);
   const messageInput = $("#userMessage");
   const userNameInput = $("#userName")
   console.log("HELLO inside message_js.js");
   const postBtn = $("#submitBtn");
 
-  displayMessage();
+  //displayMessage();
 
   postBtn.on("click", event => {
     event.preventDefault();
@@ -39,10 +40,18 @@ $(document).ready(() => {
   }
 
   function displayMessage(message) {
+    console.log("**************");
+    console.log(message);
+    //document.getElementById('messageTemp').innerHTML = renderPost(message);
     var row = $("<div>");
     row.addClass("messageBody");
-    row.append("<p>" + message.name + "</p>");
+    row.append("<ul>");
+    row.append("<li>");
+    row.append("<p>" + message.username + "</p>");
     row.append("<p>" + message.message + "</p>");
+    row.append("</li>");
+    row.append("</ul>");
+    row.append("</div>")
     $(".message-body").prepend(row);
 
   }
