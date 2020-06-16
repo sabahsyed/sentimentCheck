@@ -8,7 +8,19 @@ module.exports = function(sequelize, DataTypes) {
     message: {
       type: DataTypes.TEXT,
       allowNull: false
-    }
+    },
+    sentiment:
+    {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      default: 0.0
+    },
+    magnitude:
+    {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      default: 0.0
+    },
   });
   //Message.sync();
   return Message;

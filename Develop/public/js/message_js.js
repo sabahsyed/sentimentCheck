@@ -41,7 +41,7 @@ $(document).ready(() => {
     }
 
     function displayMessage(message){
-      
+      $(".message-body") //TODO sabah's code 
     }
   
 });

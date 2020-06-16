@@ -13,9 +13,12 @@ module.exports = function(app) {
   app.post("/api/messages", (req,res) => {
     console.log("Inside api-routes /api/messages");
     console.log(req.body);
+    // TODO : Insert Andrew's code here
         db.Message.create({
           username : req.body.name,
-          message: req.body.message
+          message: req.body.message,
+          sentiment : 0,  //TODO Andrew's code
+          magnitude :0 //TODO Andrew's code
       }).then((result) => {
         console.log(result);
         res.json(result.dataValues);
