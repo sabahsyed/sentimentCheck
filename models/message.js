@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  const Messages = sequelize.define(
-    "messages",
+  const Message = sequelize.define(
+    "Message",
     {
       username: {
         type: DataTypes.STRING,
@@ -35,11 +35,9 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     {
-      tableName: "messages",
-      freezeTableName: true,
       timestamps: true
     }
   );
 
-  return Messages;
+  return Message;
 };
