@@ -1,7 +1,7 @@
 $(document).ready(() => {
   newTitle(); //TEST
   const messageInput = $("#userMessage");
-  const userNameInput = $("#userName")
+  const userNameInput = $("#userName");
   console.log("HELLO inside message_js.js");
   const postBtn = $("#submitBtn");
 
@@ -15,7 +15,7 @@ $(document).ready(() => {
     if (!userMessage.message) {
       return;
     }
-    console.log("This is the user name :" + userMessage.name)
+    console.log("This is the user name :" + userMessage.name);
     console.log("This is the message entered  :" + userMessage.message);
     postMessage(userMessage.name, userMessage.message);
     //userMessage.val("");
@@ -47,21 +47,15 @@ $(document).ready(() => {
     row.append("<p>" + message.message + "</p>");
     row.append("</li>");
     row.append("</ul>");
-    row.append("</div>")
+    row.append("</div>");
     $(".message-body").prepend(row);
   }
 
   // TEST CODE , WORKS
-  const target = document.getElementById("target");
+  // const target = document.getElementById("target");
   function newTitle() {
-    const titles = [
-      "Random fact 1",
-      "Random fact 2",
-      "Random fact 3",
-      "Random fact 4",
-      "Random fact 5"
-    ];
+    const titles = [""];
     const i = (Math.random() * titles.length) | 0;
-    document.getElementById("target").innerHTML = "FUN FACT : " + titles[i];
+    document.getElementById("target").innerHTML = "" + titles[i];
   }
 });
