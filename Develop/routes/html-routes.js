@@ -1,7 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 const db = require("../models");
 const path = require("path");
-
+require("dotenv").config();
 
 
 // Requiring our custom middleware for checking if a user is logged in
@@ -32,6 +32,6 @@ module.exports = function(app) {
   //   res.render("index");
   // });
 }
-  
+app.get("testsentiment")
 
   
