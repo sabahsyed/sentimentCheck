@@ -53,7 +53,7 @@ $(document).ready(() => {
   }
 
   // TEST CODE , WORKS
-  var target = document.getElementById('target');
+  
   function newTitle() {
     var titles = [
       'Random fact 1',
