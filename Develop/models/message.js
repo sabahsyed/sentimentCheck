@@ -9,18 +9,18 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    // sentiment:
-    // {
-    //   type: DataTypes.FLOAT,
-    //   allowNull: false,
-    //   default: 0.0
-    // },
-    // magnitude:
-    // {
-    //   type: DataTypes.FLOAT,
-    //   allowNull: false,
-    //   default: 0.0
-    // },
+    score:
+    {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      default: 0.0
+    },
+    magnitude:
+    {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      default: 0.0
+    },
   });
   //Message.sync();
   return Message;

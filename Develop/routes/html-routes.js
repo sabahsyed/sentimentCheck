@@ -32,6 +32,34 @@ module.exports = function(app) {
   //   res.render("index");
   // });
 }
-app.get("testsentiment")
+app.get("/testsentiment", async (req, res) => {
+  // const result = await getSentiment("I like puppies and kittens. They are so warm and fuzzy. It's fun to watch them play. I am proud to own pets and care for them.");
+  const result = await getSentiment("I hate everybody. The world is just awful and full of awful people. I feel sick all of the time and wish that I felt better.");
+  res.send(JSON.stringify(result, null, 2));
+});
 
+​
+async function getSentiment(text) {
+// Imports the Google Cloud client library
+const language = require("@google-cloud/language");
+​
+// Instantiates a client
+const client = new language.LanguageServiceClient();
+​
+const text = "Hello World";
+
+const document = {
+  content: text,
+  type: "PLAIN_TEXT"
+};
+​
+// Detects the sentiment of the text
+const [result] = await client.analyzeSentiment({ document: document });
+const sentiment = result.documentSentiment;
+​
+console.log(`Text: ${text}`);
+console.log(`Sentiment score: ${sentiment.score}`);
+console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+return sentiment;
+}
   

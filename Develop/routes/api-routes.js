@@ -1,4 +1,5 @@
 const db = require("../models");
+require("dotenv").config();
 module.exports = function(app) {
 
   app.get('/', function (req, res) {
@@ -10,56 +11,31 @@ module.exports = function(app) {
     res.render("index","hello" );
   });
 
-  app.post("/api/messages", (req,res) => {
+  app.post("/api/messages", async (req,res) => {
     console.log("Inside api-routes /api/messages");
     console.log(req.body);
     // TODO : Insert Andrew's code here
-    // Imports the Google Cloud client library
-const language = require('@google-cloud/language');
+    try{
+      const sentiment = await getSentiment(req.body.message);
+      db.Message.create({
+        username : req.body.name,
+        message: req.body.message,
 
-// Creates a client
-const client = new language.LanguageServiceClient();
+        score : sentiment.score,  
+        magnitude :sentiment.magnitude, 
 
-/**
- * TODO(developer): Uncomment the following line to run this code.
- */
-const text = 'Your text to analyze, e.g. Hello, world!';
+    }).then((result) => {
+      console.log(result);
+      res.json(result.dataValues);
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
+    } catch(err) {
+      console.log(err)
+    }
 
-// Prepares a document, representing the provided text
-const document = {
-  content: text,
-  type: 'PLAIN_TEXT',
-};
-
-// Detects the sentiment of the document
-const [result] = await client.analyzeSentiment({document});
-
-const sentiment = result.documentSentiment;
-console.log('Document sentiment:');
-console.log(`  Score: ${sentiment.score}`);
-console.log(`  Magnitude: ${sentiment.magnitude}`);
-
-const sentences = result.sentences;
-sentences.forEach(sentence => {
-  console.log(`Sentence: ${sentence.text.content}`);
-  console.log(`  Score: ${sentence.sentiment.score}`);
-  console.log(`  Magnitude: ${sentence.sentiment.magnitude}`);
-});
-
-        db.Message.create({
-          username : req.body.name,
-          message: req.body.message,
-
-          //sentiment : 0,  //TODO Andrew's code
-          //magnitude :0 //TODO Andrew's code
-          
-      }).then((result) => {
-        console.log(result);
-        res.json(result.dataValues);
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
+        
   });
 
   app.get("/api/messages",(req,res) =>{
@@ -68,3 +44,25 @@ sentences.forEach(sentence => {
     res.render("index", {Message : result}) //USE HANDLEBARS HERE
   });
 };
+
+async function getSentiment(text) {
+  // Imports the Google Cloud client library
+  const language = require("@google-cloud/language");
+  ​
+  // Instantiates a client
+  const client = new language.LanguageServiceClient();
+  ​
+  const document = {
+    content: text,
+    type: "PLAIN_TEXT"
+  };
+  ​
+  // Detects the sentiment of the text
+  const [result] = await client.analyzeSentiment({ document: document });
+  const sentiment = result.documentSentiment;
+  ​
+  console.log(`Text: ${text}`);
+  console.log(`Sentiment score: ${sentiment.score}`);
+  console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+  return sentiment;
+  }
