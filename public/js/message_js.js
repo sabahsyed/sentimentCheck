@@ -1,11 +1,9 @@
-  
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
 $(document).ready(() => {
-  newTitle(); //TEST
+  newTitle();
   const messageInput = $("#userMessage");
   const userNameInput = $("#userName");
-  console.log("HELLO inside message_js.js");
   const postBtn = $("#submitBtn");
 
   postBtn.on("click", event => {
@@ -18,10 +16,7 @@ $(document).ready(() => {
     if (!userMessage.message) {
       return;
     }
-    console.log("This is the user name :" + userMessage.name);
-    console.log("This is the message entered  :" + userMessage.message);
     postMessage(userMessage.name, userMessage.message);
-    //userMessage.val("");
   });
 
   function postMessage(name, message) {
@@ -29,7 +24,6 @@ $(document).ready(() => {
       name: name,
       message: message
     }).then(response => {
-      console.log(response);
       displayMessage(response);
     }, handleLoginErr);
   }
@@ -39,9 +33,6 @@ $(document).ready(() => {
   }
 
   function displayMessage(message) {
-    // console.log("**************");
-    // console.log(message);
-    //document.getElementById('messageTemp').innerHTML = renderPost(message);
     if (message.sentiment > 0.5) {
       var emoji = "<i class='fas fa-laugh fa-lg'></i>";
     } else if (message.sentiment < -0.6) {
@@ -81,9 +72,6 @@ $(document).ready(() => {
     row.append("</div>");
     $(".message-body").prepend(row);
   }
-
-  // TEST CODE , WORKS
-  // const target = document.getElementById("target");
   function newTitle() {
     const titles = [""];
     const i = (Math.random() * titles.length) | 0;
