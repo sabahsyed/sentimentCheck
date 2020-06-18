@@ -49,7 +49,7 @@ $(document).ready(() => {
       var emoji = "<i class='fas fa-frown fa-lg'></i>";
     } else if (message.sentiment > 0) {
       var emoji = "<i class='fas fa-smile fa-lg'></i>";
-    } else if (message.sentiment < 0) {
+    } else if (message.sentiment <= 0) {
       var emoji = "<i class='fas fa-meh fa-lg'></i>";
     }
 
