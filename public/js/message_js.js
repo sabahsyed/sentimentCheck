@@ -1,7 +1,7 @@
 $(document).ready(() => {
   newTitle(); //TEST
   const messageInput = $("#userMessage");
-  const userNameInput = $("#userName")
+  const userNameInput = $("#userName");
   console.log("HELLO inside message_js.js");
   const postBtn = $("#submitBtn");
 
@@ -15,7 +15,7 @@ $(document).ready(() => {
     if (!userMessage.message) {
       return;
     }
-    console.log("This is the user name :" + userMessage.name)
+    console.log("This is the user name :" + userMessage.name);
     console.log("This is the message entered  :" + userMessage.message);
     postMessage(userMessage.name, userMessage.message);
     //userMessage.val("");
@@ -25,11 +25,10 @@ $(document).ready(() => {
     $.post("/api/messages", {
       name: name,
       message: message
-    })
-      .then((response) => {
-        console.log(response);
-        displayMessage(response);
-      }, handleLoginErr)
+    }).then(response => {
+      console.log(response);
+      displayMessage(response);
+    }, handleLoginErr);
   }
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
@@ -40,7 +39,7 @@ $(document).ready(() => {
     console.log("**************");
     console.log(message);
     //document.getElementById('messageTemp').innerHTML = renderPost(message);
-    var row = $("<div>");
+    const row = $("<div>");
     row.addClass("messageBody");
     row.append("<ul>");
     row.append("<li>");
@@ -48,24 +47,15 @@ $(document).ready(() => {
     row.append("<p>" + message.message + "</p>");
     row.append("</li>");
     row.append("</ul>");
-    row.append("</div>")
+    row.append("</div>");
     $(".message-body").prepend(row);
   }
 
   // TEST CODE , WORKS
-  
+  // const target = document.getElementById("target");
   function newTitle() {
-    var titles = [
-      'Random fact 1',
-      'Random fact 2',
-      'Random fact 3',
-      'Random fact 4',
-      'Random fact 5'
-    ];
-    var i = (Math.random() * titles.length) | 0;
-    document.getElementById("target").innerHTML = "FUN FACT : " + titles[i];
+    const titles = [""];
+    const i = (Math.random() * titles.length) | 0;
+    document.getElementById("target").innerHTML = "" + titles[i];
   }
-
 });
-
-

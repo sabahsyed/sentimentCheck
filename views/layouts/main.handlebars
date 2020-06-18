@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/stylesheets/style.css"  />
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
-		<script src = "/js/message_js.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here"/>
+  <link rel="stylesheet" href="../Assets/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+  <title>Bootcamp</title>
+  <style>
+    .display-4 {
+      font-family: 'MuseoModerno', cursive !important;
+    }
+    body {
+      background-color: #808080;
+    }
+    #search{
+        display:block;
+        text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark" style="background-color: #29A0AF;">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      <i class="far fa-comment-dots"></i> Bootcamp Board
+    </a>
+    <form class="form-inline my-2 my-md-0 text-center" id="search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  {{{ body }}}
+  <footer>
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item" aria-current="page">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
+  <script src = "/js/message_js.js"></script>
+</body>
 </html>
