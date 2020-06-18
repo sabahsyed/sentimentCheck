@@ -1,5 +1,6 @@
 const db = require("../models");
 require("dotenv").config();
+
 module.exports = function(app) {
   app.get("/", (req, res) => {
     // console.log("/get");
@@ -19,12 +20,10 @@ module.exports = function(app) {
       db.Message.create({
         username: req.body.name,
         message: req.body.message,
-
-        score: sentiment.score,
-        magnitude: sentiment.magnitude
+        sentiment: sentiment.score
       })
         .then(result => {
-          // console.log(result);
+          console.log(result);
           res.json(result.dataValues);
         })
         .catch(err => {
