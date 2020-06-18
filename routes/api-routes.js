@@ -1,75 +1,62 @@
 const db = require("../models");
-
+require("dotenv").config();
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    console.log("/get");
+    // console.log("/get");
     res.render("index");
   });
   app.get("/api/messages", (req, res) => {
-    console.log("/get/api/messages");
+    // console.log("/get/api/messages");
     res.render("index", "hello");
   });
 
-  app.post("/api/messages", (req, res) => {
-    console.log("Inside api-routes /api/messages");
-    console.log(req.body);
+  app.post("/api/messages", async (req, res) => {
+    // console.log("Inside api-routes /api/messages");
+    // console.log(req.body);
     // TODO : Insert Andrew's code here
-    db.Message.create({
-      username: req.body.name,
-      message: req.body.message
-      //sentiment : 0,  //TODO Andrew's code
-      //magnitude :0 //TODO Andrew's code
-    })
-      .then(result => {
-        console.log(result);
-        res.json(result.dataValues);
+    try {
+      const sentiment = await getSentiment(req.body.message);
+      db.Message.create({
+        username: req.body.name,
+        message: req.body.message,
+
+        score: sentiment.score,
+        magnitude: sentiment.magnitude
       })
-      .catch(err => {
-        res.status(401).json(err);
-      });
+        .then(result => {
+          // console.log(result);
+          res.json(result.dataValues);
+        })
+        .catch(err => {
+          res.status(401).json(err);
+        });
+    } catch (err) {
+      // console.log(err);
+    }
   });
 
   app.get("/api/messages", (req, res) => {
-    console.log();
+    // console.log();
     const result = db.Message.findAll();
     res.render("index", { Message: result }); //USE HANDLEBARS HERE
   });
 };
 
-// const db = require("../models");
+async function getSentiment(text) {
+  const language = require("@google-cloud/language");
 
-// module.exports = function(app) {
-//   app.get("/api/", (req, res) => {
-//     db.messages.findAll({}).then(dbMessages => {
-//       res.json(dbMessages);
-//     });
-//   });
+  const client = new language.LanguageServiceClient();
 
-//   app.get("/api/", (req, res) => {
-//     res.json();
-//   });
+  const document = {
+    content: text,
+    type: "PLAIN_TEXT"
+  };
 
-//   app.post("/api/messages", (req, res) => {
-//     console.log("Inside api-routes /api/messages");
-//     console.log(req.body);
-//     db.Message.create("index", {
-//       username: req.body.username,
-//       message: req.body.message,
-//       sentiment: req.body.sentiment,
-//       likes: req.body.likes,
-//       dislikes: req.body.dislikes
-//     })
-//       .then(() => {
-//         res.render();
-//       })
-//       .catch(err => {
-//         res.status(401).json(err);
-//       });
-//   });
+  const [result] = await client.analyzeSentiment({ document: document });
+  const sentiment = result.documentSentiment;
 
-//   app.get("/api/listMessages", (req, res) => {
-//     console.log();
-//     result = db.Message.findAll();
-//     res.render();
-//   });
-// };
+  // console.log(`Text: ${text}`);
+  console.log(`Sentiment score: ${sentiment.score}`);
+  console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+  return sentiment;
+}
