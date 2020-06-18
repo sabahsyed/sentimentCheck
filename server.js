@@ -1,5 +1,17 @@
 const express = require("express");
+const mysql = require("mysql");
 const exphbs = require("express-handlebars");
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3000,
+    user: "root",
+    password: "password",
+    database: "Message"
+  });
+}
 
 const PORT = process.env.PORT || 3000;
 const db = require("./models");
