@@ -1,0 +1,16 @@
+<h1>Update the message with an id of {{this.id}}</h1>
+
+<form data-id="{{this.id}}" class="update-form">
+
+  <div class="form-group">
+    <label for="username">User name:</label>
+    <input type="text" id="userName" name="username" value="{{this.username}}">
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message:</label>
+    <textarea id="userMessage" name="message" rows="8" cols="40">{{this.message}}</textarea>
+  </div>
+
+  <button type="click" id = "submitBtn">Update Message</button>
+</form>
