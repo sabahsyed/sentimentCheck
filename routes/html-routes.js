@@ -8,15 +8,6 @@ module.exports = function(app) {
         messages: result
       };
       console.log(JSON.stringify(hbsObject, null, 2));
-      // console.log(
-      //   "Request --------------------------------------------------------------- Request"
-      // );
-      // console.log(req.body);
-      // console.log(
-      //   "Response --------------------------------------------------------------- Response"
-      // );
-      // console.log(res.body);
-      // console.log("main page");
       res.render("index", hbsObject);
     });
 
