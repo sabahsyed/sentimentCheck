@@ -35,7 +35,6 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "vars-on-top": "error",
-    "yoda": "error",
-    "parser": "babel-eslint"
+    "yoda": "error"
   }
 }

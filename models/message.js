@@ -1,27 +1,43 @@
 module.exports = function(sequelize, DataTypes) {
-  const Message = sequelize.define("Message", {
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      default: "Anonymous"
-    },
-    message: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    score:
+  const Message = sequelize.define(
+    "Message",
     {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-      default: 0.0
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "Anonymous"
+      },
+      message: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
+      sentiment: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true
+      },
+      likes: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
+      dislikes: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+      }
     },
-    magnitude:
     {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-      default: 0.0
-    },
-  });
-  //Message.sync();
+      timestamps: true
+    }
+  );
+
   return Message;
 };

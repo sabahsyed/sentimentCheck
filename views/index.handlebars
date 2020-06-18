@@ -1,40 +1,89 @@
-
-
-<h2>Add a Message</h2>
-<h4 id ="target">Fun fact: </h4>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="username">User name:</label>
-    <input type="text" id="userName" name="username">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here"/>
+  <link rel="stylesheet" href="/Project2/Assets/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+  <title>Bootcamp</title>
+  <style>
+    .display-4 {
+      font-family: 'MuseoModerno', cursive !important;
+    }
+    body {
+      background-color: #808080;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-4"></div>
+      <div class="jumbotron jumbotron-fluid col-md-4">
+        <div class="container">
+          <h1 class="display-4">Add a Message</h1>
+          <h4 id ="target"></h4>
+          <div class="lead">
+            <form class="create-form">
+            <div class="form-group">
+              <label for="username">User name:</label>
+              <input type="text" id="userName" name="username">
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="userMessage" name="message" rows="8" cols="40"></textarea>
+            </div>
+            <button type="click" id = "submitBtn">Add Message:</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+      <div class ="container">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">User Posts</h1>
+            <div class="row justify-content-md-center">
+              <div class="col-md-9">
+                <div class="card">
+                  <div class="card-header">
+                    <h4><i class="far fa-dizzy"></i> Username</h4>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Message Up</h5>
+                    <div class="card-text">
+                      <div class ="card message-body">
+                        {{#each messages}}
+                        {{log this}}
+                        <div class="card">
+                          <div class="card-header">
+                            <h4><span class="label">Username:</span> {{this.dataValues.username}}</h4>
+                          </div>
+                          <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                              <p><span class="label">Message:</span> {{this.dataValues.message}}</p>
+                              <footer class="blockquote-footer">Created At:<cite title="Source Title">{{this.dataValues.createdAt}}</cite></footer>
+                              <a href="#" class="btn btn-primary"><i class="fas fa-grin"></i>&nbsp<i class="fas fa-grin-hearts"></i>&nbsp<i class="fas fa-grin-squint-tears"></i>&nbsp<i class="fas fa-angry"></i></a>
+                            </blockquote>
+                          </div>
+                          {{/each}}
+                        </div>
+                        {{!-- <button data-id="{{this.dataValues.id}}" class="delquote">Delete</button> --}}
+                        {{!-- <a href="/{{this.dataValues.id}}">Update this quote</a> --}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="message">Message:</label>
-    <textarea id="userMessage" name="message" rows="8" cols="40"></textarea>
-  </div>
-
-  <button type="click" id = "submitBtn">Add Message:</button>
-</form>
-{{!-- 
-<template id="message-template">
-  <div class="messageTemp">
-    <h1>Name :{{name}}</h1>
-    <p>Message : {{message}}</p>
-  </div>
-</template> --}}
-
-
-<h1>Message up</h1>
-<ul class ="message-body">
-  {{#each messages}}
-  {{log this}}
-  	<li>
-  		<p><span class="label">User name:</span> {{this.dataValues.username}}</p>
-  		<p><span class="label">message:</span> {{this.dataValues.message}}</p>
-      {{!-- <button data-id="{{this.dataValues.id}}" class="delquote">Delete</button> --}}
-      {{!-- <a href="/{{this.dataValues.id}}">Update this quote</a> --}}
-  	</li>
-  {{/each}}
-</ul>
-
+</body>
+</html>
