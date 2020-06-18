@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       sentiment: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: true
       },
       likes: {

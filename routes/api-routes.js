@@ -20,7 +20,7 @@ module.exports = function(app) {
       db.Message.create({
         username: req.body.name,
         message: req.body.message,
-        sentiment: Math.ceil(sentiment.score)
+        sentiment: sentiment.score
       })
         .then(result => {
           console.log(result);

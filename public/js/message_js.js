@@ -41,10 +41,16 @@ $(document).ready(() => {
     // console.log("**************");
     // console.log(message);
     //document.getElementById('messageTemp').innerHTML = renderPost(message);
-    if (message.sentiment > 0) {
-      var emoji = "<i class='fas fa-smile fa-lg'></i>";
-    } else if (message.sentiment <= 0) {
+    if (message.sentiment > 0.5) {
+      var emoji = "<i class='fas fa-laugh fa-lg'></i>";
+    } else if (message.sentiment < -0.6) {
+      var emoji = "<i class='fas fa-sad-cry fa-lg'></i>";
+    } else if (message.sentiment < -0.4) {
       var emoji = "<i class='fas fa-frown fa-lg'></i>";
+    } else if (message.sentiment > 0) {
+      var emoji = "<i class='fas fa-smile fa-lg'></i>";
+    } else if (message.sentiment < 0) {
+      var emoji = "<i class='fas fa-meh fa-lg'></i>";
     }
 
     const row = $("<div>");
