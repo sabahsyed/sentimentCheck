@@ -54,3 +54,17 @@ This application was developed with
 ​
 ## Acknowledgements:
 We would like to thank the UW Bootcamp faculty , especially our passionate and patient instructor John Young and our ever helpful and knowledgeable TAs Ben Vaagen and Abdul Aziz for guiding and motivating us throughout this project.
+
+## Screenshots:
+<img width="1440" alt="Screen Shot 2020-06-17 at 10 11 59 PM" src="https://user-images.githubusercontent.com/61300825/85095953-c9b5a180-b1a7-11ea-84a0-aabe23d4fa8b.png">
+
+![Screen Shot 2020-06-18 at 7 49 19 PM](https://user-images.githubusercontent.com/61300825/85095979-d6d29080-b1a7-11ea-9dc4-af40782fa29b.png)
+
+![Screen Shot 2020-06-18 at 7 49 22 PM](https://user-images.githubusercontent.com/61300825/85096020-f10c6e80-b1a7-11ea-9ce6-5eedd4baaff1.png)
+
+![Screen Shot 2020-06-18 at 7 49 49 PM](https://user-images.githubusercontent.com/61300825/85096040-fc5f9a00-b1a7-11ea-9e1a-f8017c7e3c85.png)
+
+![Screen Shot 2020-06-18 at 7 49 52 PM](https://user-images.githubusercontent.com/61300825/85096050-08e3f280-b1a8-11ea-9482-f5c2bbee8116.png)
+
+## GIF of Application in Action:
+![sentimentCheckGIF](https://user-images.githubusercontent.com/61300825/85096089-1c8f5900-b1a8-11ea-9129-a6f9675063c4.gif)
