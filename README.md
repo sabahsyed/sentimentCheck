@@ -51,11 +51,7 @@ This application was developed with
 ### Sabah Syed 
 #### [Sabahsyed](https://github.com/sabahsyed) - ![GitHub followers](https://img.shields.io/github/followers/sabahsyed?label=Follow&style=social)
 
-​
-## Acknowledgements:
-We would like to thank the UW Bootcamp faculty , especially our passionate and patient instructor John Young and our ever helpful and knowledgeable TAs Ben Vaagen and Abdul Aziz for guiding and motivating us throughout this project.
-
-## Screenshots:
+​## Screenshots:
 <img width="1440" alt="Screen Shot 2020-06-17 at 10 11 59 PM" src="https://user-images.githubusercontent.com/61300825/85095953-c9b5a180-b1a7-11ea-84a0-aabe23d4fa8b.png">
 
 ![Screen Shot 2020-06-18 at 7 49 19 PM](https://user-images.githubusercontent.com/61300825/85095979-d6d29080-b1a7-11ea-9dc4-af40782fa29b.png)
@@ -68,3 +64,8 @@ We would like to thank the UW Bootcamp faculty , especially our passionate and p
 
 ## GIF of Application in Action:
 ![sentimentCheckGIF](https://user-images.githubusercontent.com/61300825/85096089-1c8f5900-b1a8-11ea-9129-a6f9675063c4.gif)
+## Presentation
+![SentimentCheckPresentation](https://docs.google.com/presentation/d/1u-077s7jF4r0RxiFDvu87N2O2tOUCNosyHdBeMllbeg/edit#slide=id.g35f391192_00)
+## Acknowledgements:
+We would like to thank the UW Bootcamp faculty , especially our passionate and patient instructor John Young and our ever helpful and knowledgeable TAs Ben Vaagen and Abdul Aziz for guiding and motivating us throughout this project.
+
