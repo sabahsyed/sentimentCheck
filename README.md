@@ -1,5 +1,13 @@
 # Sentiment Check!
-​
+
+​# Table of Contents:
+### [Introduction](##introduction)
+### [Links](##links)
+### [Technologies Used](##technologiesUsed)
+### [Usage](##usage)
+### Screenshots and GIfs
+### [Contact](##contact)
+### [Acknowledgements](##acknowledgements)
 ## Introduction:
 A message board that incorporates Google Natural Language API for sentiment analysis. We have a fun app that allows a user to post a message and the API we have used analyses the message and gives us a score/emoji showing what the nature of the message was(Positive/Negative).
 Sentiment analysis is the process of extracting key phrases and words from text to understand the user’s attitude and emotions. So, why is it useful?  What can we do with such data ?  
@@ -10,15 +18,6 @@ Companies can use it to make more informed marketing decisions. For example, the
 * Social networks can use sentiment analysis to weed out violent, racist , inappropriate ,unlawful content.
 * Track  posts on cyber bullying
 
-
-# Table of Contents:
-### [Introduction](##introduction)
-### [Links](##links)
-### [Technologies Used](##technologiesUsed)
-### [Usage](##usage)
-### [Tests](##tests)
-### [Contact](##contact)
-### [Acknowledgements](##acknowledgements)
 
 ## Links:
 Repository: https://github.com/sabahsyed/Project2
@@ -38,7 +37,6 @@ This application was developed with
 ​
 ## Usage:
 
-
  #### Locally :
  Used needs to run npm and require the dependencies like Sequelize, Express , Express-handlebars and run the command **node server.js**
  It gives a link to open a **localhostserver8080**  and user can view the app on the browser.
@@ -47,7 +45,11 @@ This application was developed with
  #### Heroku Link:
  ![SentimentCheckHeroku](https://calm-wildwood-88089.herokuapp.com/)
 ​
-​
+### Screenshots and GIfs
+![SentimentCheck]()
+![SentimentCheck]()
+![SentimentCheck]()
+
 ## Contact:
 ### Andrew Padgett   
 #### [Andorask](https://github.com/Andorask) - ![GitHub followers](https://img.shields.io/github/followers/Andorask?label=Follow&style=social)
