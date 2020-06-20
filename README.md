@@ -5,9 +5,10 @@
 ### [Links](##links)
 ### [Technologies Used](##technologiesUsed)
 ### [Usage](##usage)
-### Screenshots and GIfs
+### Screenshots,GIfs and Presentation links
 ### [Contact](##contact)
 ### [Acknowledgements](##acknowledgements)
+
 ## Introduction:
 A message board that incorporates Google Natural Language API for sentiment analysis. We have a fun app that allows a user to post a message and the API we have used analyses the message and gives us a score/emoji showing what the nature of the message was(Positive/Negative).
 Sentiment analysis is the process of extracting key phrases and words from text to understand the user’s attitude and emotions. So, why is it useful?  What can we do with such data ?  
@@ -45,10 +46,17 @@ This application was developed with
  #### Heroku Link:
  ![SentimentCheckHeroku](https://calm-wildwood-88089.herokuapp.com/)
 ​
-### Screenshots and GIfs
-![SentimentCheck]()
-![SentimentCheck]()
-![SentimentCheck]()
+### Screenshots, GIfs and Presentation
+![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-17%20at%2010.11.59%20PM.png)
+![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.19%20PM.png)
+![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.22%20PM.png)
+![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.49%20PM.png)
+![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.52%20PM.png)
+
+![SentimentCheckGIF](https://github.com/sabahsyed/Project2-/blob/master/screenshots/sentimentCheckGIF.gif)
+
+![SentimentCheckPresentation](https://docs.google.com/presentation/d/1u-077s7jF4r0RxiFDvu87N2O2tOUCNosyHdBeMllbeg/edit#slide=id.g35f391192_00)
+
 
 ## Contact:
 ### Andrew Padgett   
