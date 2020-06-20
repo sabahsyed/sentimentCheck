@@ -56,6 +56,7 @@ This application was developed with
 ![SentimentCheckGIF](https://github.com/sabahsyed/Project2-/blob/master/screenshots/sentimentCheckGIF.gif)
 
 ![SentimentCheckPresentation](https://docs.google.com/presentation/d/1u-077s7jF4r0RxiFDvu87N2O2tOUCNosyHdBeMllbeg/edit#slide=id.g35f391192_00)
+https://docs.google.com/presentation/d/1u-077s7jF4r0RxiFDvu87N2O2tOUCNosyHdBeMllbeg/edit#slide=id.g35f391192_00
 
 
 ## Contact:
