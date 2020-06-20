@@ -5,7 +5,7 @@
 ### [Links](##links)
 ### [Technologies Used](##technologiesUsed)
 ### [Usage](##usage)
-### Screenshots,GIfs and Presentation links
+### [Screenshots,GIfs and Presentation links] (##Screenshots, GIfs and Presentation)
 ### [Contact](##contact)
 ### [Acknowledgements](##acknowledgements)
 
@@ -40,13 +40,10 @@ This application was developed with
 
  #### Locally :
  Used needs to run npm and require the dependencies like Sequelize, Express , Express-handlebars and run the command **node server.js**
- It gives a link to open a **localhostserver8080**  and user can view the app on the browser.
- #### Github Link:
- ![SentimentCheckGithub](https://github.com/sabahsyed/Project2)
- #### Heroku Link:
- ![SentimentCheckHeroku](https://calm-wildwood-88089.herokuapp.com/)
+ It gives a link to open a **localhostserver3000**  and user can view the app on the browser.
+ #### Github and Heroku Links are mentioned above in ** Links **
 ​
-### Screenshots, GIfs and Presentation
+## Screenshots, GIfs and Presentation
 ![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-17%20at%2010.11.59%20PM.png)
 ![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.19%20PM.png)
 ![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.22%20PM.png)
