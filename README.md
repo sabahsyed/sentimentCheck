@@ -5,7 +5,7 @@
 ### [Links](##links)
 ### [Technologies Used](##technologiesUsed)
 ### [Usage](##usage)
-### Screenshots,GIfs and Presentation links
+### [Screenshots,GIfs and Presentation links](##screenshotsGIFspresentationlinks)
 ### [Contact](##contact)
 ### [Acknowledgements](##acknowledgements)
 
@@ -21,8 +21,8 @@ Companies can use it to make more informed marketing decisions. For example, the
 
 
 ## Links:
-Repository: https://github.com/sabahsyed/Project2
-Heroku: https://calm-wildwood-88089.herokuapp.com/
+GITHUB Repository: https://github.com/sabahsyed/Project2
+Heroku : https://calm-wildwood-88089.herokuapp.com/
 ​
 ## Technologies Used:
 This application was developed with 
@@ -46,7 +46,7 @@ This application was developed with
  #### Heroku Link:
  ![SentimentCheckHeroku](https://calm-wildwood-88089.herokuapp.com/)
 ​
-### Screenshots, GIfs and Presentation
+## Screenshots, GIfs and Presentation links
 ![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-17%20at%2010.11.59%20PM.png)
 ![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.19%20PM.png)
 ![SentimentCheck](https://github.com/sabahsyed/Project2-/blob/master/screenshots/Screen%20Shot%202020-06-18%20at%207.49.22%20PM.png)
