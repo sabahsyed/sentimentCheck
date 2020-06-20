@@ -1,11 +1,11 @@
-# Sentiment Check!
+# Sentiment Check! -- Check yourself before you wreck yourself !
 
-​# Table of Contents:
+## Table of Contents:
 ### [Introduction](##introduction)
 ### [Links](##links)
 ### [Technologies Used](##technologiesUsed)
 ### [Usage](##usage)
-### [Screenshots,GIfs and Presentation links] (##Screenshots, GIfs and Presentation)
+### [Screenshots,GIfs and Presentation links](##Screenshots,GIFs and Presentation Links)
 ### [Contact](##contact)
 ### [Acknowledgements](##acknowledgements)
 
