@@ -5,7 +5,7 @@
 ### [Links](##links)
 ### [Technologies Used](##technologiesUsed)
 ### [Usage](##usage)
-### [Screenshots,GIfs,Presentation link](##screenshotsGIFsPresentationLinks)
+### [Screenshots,GIfs,Presentation link](##Screenshots,GIFs and Presentation Links)
 ### [Contact](##contact)
 ### [Acknowledgements](##acknowledgements)
 
