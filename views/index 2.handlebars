@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="/Project2/Assets/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+<title>Bootcamp</title>
+<style>
+a {
+color: #29A0AF;
+}
+
+.btn-primary {
+  margin: 2%;
+}
+
+.display-4 {
+font-family: 'MuseoModerno', cursive !important;
+}
+
+#username, .navbar-brand, #tagline {
+font-family: 'MuseoModerno', cursive !important;
+}
+
+body {
+background-color: #808080;
+}
+
+.card-body {
+  padding: 0%;
+}
+
+#submitBtn {
+background-color: #29A0AF;
+}
+
+textarea, input {
+-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+p {
+  padding: 2%;
+}
+
+.blockquote {
+  padding: 5px;
+}
+
+#tagline {
+color: #29A0AF;
+font-weight: bold;
+text-align: center;
+}
+
+#alias {
+padding-left: 5%;
+}
+
+.form-group * {
+  vertical-align: middle;
+  width: 80%;
+}
+
+#alias {
+padding-left: 0%;
+}
+
+.jumbotron-fluid {
+padding-bottom: 0px;
+}
+
+#userName {
+width: 40%;
+}
+
+{{!-- .cite {
+font-size: smaller !important;
+} --}}
+
+.blockquote-footer {
+font-size: small;
+}
+
+#posts {
+text-align: center;
+}
+
+.sidebar {
+position: fixed;
+top: 100px;
+bottom: 100px;
+left: 0;
+z-index: 1000;
+display: block;
+padding: 20px;
+margin-left:40px;
+overflow-x: hidden;
+overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+background-color: #F5F5F5;
+border-right: 1px solid #eee;
+}
+
+@media screen and (max-width: 1024px) {
+textarea {
+width: 50% !important;
+}
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="col-md-3"><div class="container-fluid">
+<div class="row">
+<div class="col-sm-3 col-md-2 sidebar">
+<li class="nav nav-sidebar">
+    <li class="active"><a href="https://cloud.google.com/natural-language/docs/analyzing-sentiment"><i class="fas fa-robot"></i>&nbspHow Sentiment Analysis Works</a></li>
+    <li><a href="#"><i class="fas fa-bookmark"></i>&nbsp&nbspBookmarks&nbsp&nbsp</a></li>
+    <li><a href="#"><i class="fas fa-mail-bulk"></i>&nbspYour Posts&nbsp&nbsp</a></li>
+    <li><a href="#"><i class="fab fa-wpexplorer"></i>&nbsp&nbspExplore&nbsp&nbsp</a></li>
+</li>
+</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+</div>
+</div>
+</div></div>
+<div class="jumbotron jumbotron-fluid col-md-6">
+  <div class="container">
+    <h2 class="display-4"><img src="https://i.imgur.com/1xQVsiR.png">&nbsp&nbsp&nbspWhat's on your mind?</h2>
+    <h4 id ="target" class="hide"></h4>
+    <p class="lead"><form class="create-form">
+  <div class="form-group" id="alias">
+    <label for="username">Alias:</label>
+    <input type="text" id="userName" name="username" placeholder="Anonymous">
+  </div>
+  <div class="form-group">
+    <label for="message" id="message">Message:</label>
+    <textarea id="userMessage" name="message" placeholder="Remember, be nice!" rows="8" cols="40"></textarea>
+  </p>
+  <button type="click" id = "submitBtn" class="btn btn-outline">Add Message:</button>
+</form>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-md-3"></div>
+      <div class ="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4" id="posts">User Posts</h1>
+            <div class="row justify-content-md-center">
+  <div class="col-md-9">
+    <div class="card">
+    <div class="card-header">
+   <h4 id="tagline"><i class="far fa-dizzy"></i> Check yourself before you wreck yourself</h4>
+  </div>
+      <div class="card-body">
+        <h3 class="card-title">Recent Posts</h3>
+        <p class="card-text">
+<div class ="card message-body">
+  {{#each messages}}
+  {{log this}}
+  <div class="card">
+  <div class="card-header">
+    <h4><span class="label" id="username">Username:</h4></span> <h5>{{this.dataValues.username}}</h5>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><span class="label">Message:</span> {{this.dataValues.message}}</p>
+      <footer class="blockquote-footer">Created At:<cite title="Source Title" class="cite">{{this.dataValues.createdAt}}</cite></footer>
+       <a href="#" class="btn btn-primary"><i class="fas fa-grin-hearts"></i>&nbsp<i class="fas fa-grin"></i>&nbsp<i class="fas fa-meh"></i>&nbsp<i class="fas fa-angry"></i></a>
+    </blockquote>
+  </div>
+</div>
+      {{!-- <button data-id="{{this.dataValues.id}}" class="delquote">Delete</button> --}}
+      {{!-- <a href="/{{this.dataValues.id}}">Update this quote</a> --}}
+  {{/each}}
+</p>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      </div>
+</body>
+</html>
