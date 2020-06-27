@@ -1,10 +1,12 @@
 const express = require("express");
 const mysql = require("mysql");
 const exphbs = require("express-handlebars");
+const compression = require("compression");
+
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  var connection = mysql.createConnection({
+  connection = mysql.createConnection({
     host: "localhost",
     port: 3000,
     user: "root",
@@ -17,6 +19,7 @@ const PORT = process.env.PORT || 3000;
 const db = require("./models");
 
 const app = express();
+app.use(compression());
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
